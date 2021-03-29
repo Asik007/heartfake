@@ -38,12 +38,12 @@
             <input value = "0" min="1" max="200" oninput = "setA(this)" type = "number" step= "1"><br>
             <span id="B"> &ensp; 0</span>
             
-            <input value="0" min="1" max="200" oninput="setB(this)" type="range" step="1"><input value = "0" min="1" max="200" oninput = "setB(this)" type = "number" step= "1"><br><span id="C"> &ensp; 0</span>
-            <input value="0" min="1" max="200" oninput="setC(this)" type="range" step="1"><input value = "0" min="1" max="200" oninput = "setC(this)" type = "number" step= "1"><br><span id="D"> &ensp; 0</span>
-            <input value="0" min="1" max="200" oninput="setD(this)" type="range" step="1"><input value = "0" min="1" max="200" oninput = "setF(this)" type = "number" step= "1"><br><span id="E"> &ensp; 0</span>
-            <input value="0" min="1" max="200" oninput="setE(this)" type="range" step="1"><input value = "0" min="1" max="200" oninput = "setE(this)" type = "number" step= "1"><br><span id="F"> &ensp; 0</span>
-            <input value="0" min="1" max="200" oninput="setF(this)" type="range" step="1"><input value = "0" min="1" max="200" oninput = "setF(this)" type = "number" step= "1"><br>
-            <span id="R"> 0</span> <span>minutes</span>
+            <input value="0" min="100" max="200" oninput="setB(this)" type="range" step="1"><input value = "0" min="1" max="200" oninput = "setB(this)" type = "number" step= "1"><br><span id="C"> &ensp; 0</span>
+            <input value="0" min="100" max="200" oninput="setC(this)" type="range" step="1"><input value = "0" min="1" max="200" oninput = "setC(this)" type = "number" step= "1"><br><span id="D"> &ensp; 0</span>
+            <input value="0" min="100" max="200" oninput="setD(this)" type="range" step="1"><input value = "0" min="1" max="200" oninput = "setD(this)" type = "number" step= "1"><br><span id="E"> &ensp; 0</span>
+            <input value="0" min="100" max="200" oninput="setE(this)" type="range" step="1"><input value = "0" min="1" max="200" oninput = "setE(this)" type = "number" step= "1"><br><span id="F"> &ensp; 0</span>
+            <input value="0" min="100" max="200" oninput="setF(this)" type="range" step="1"><input value = "0" min="1" max="200" oninput = "setF(this)" type = "number" step= "1"><br>
+            <span id="R"> &ensp; 0</span> <span> minutes</span>
             <input value="10" min="1" max="60" oninput="setR(this)" type="number"> <br>
             <button name="run" onclick="routine()" >run</button>
         <br>
@@ -54,7 +54,6 @@
             To set the routine use the sliders to set your average value.
             If you want to run it again refresh the page.
             Also, it takes 30 sec for the routine to actually start.
-            The bottom box describes how long the routine will last.
         </pre></p>
             
         </div>
@@ -91,13 +90,14 @@
                 setTimeout(function() {   //  call a 3s setTimeout when the loop is called
                     if(slider >= 6){
                     return
-                }    
+                }   
+                else{ 
                     console.log('count');   //  your code here
                         i++;                    //  increment the counter
-                        if (i <= R) {           //  if the counter < 10, call the loop function
+                        if(i <= (4*R)){           //  if the counter < 10, call the loop function
                             myLoop();
                             console.log(i);  
-                        } 
+                        }
                         else{
                             myLoop();
                             i = 0
@@ -139,7 +139,8 @@
                         time = Math.round((Math.random()*20)+(select-10))
                         setFreq(time);
                         console.log(time)
-                    }, 30000)
+                    }
+                    }, 15000)
                 }
             }
             
